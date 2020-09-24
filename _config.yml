@@ -9,7 +9,7 @@ theme: jekyll-theme-hacker
   - about.md
 
 #style: dark # dark (default), light or hacker
-listen_for_clients_preferred_style: false # false (default) or true
+#listen_for_clients_preferred_style: false # false (default) or true
 
 #footer: '<a href="https://vandenhoek.aero">vandenhoek.aero</a>'
 
