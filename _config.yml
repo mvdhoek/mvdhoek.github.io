@@ -1,17 +1,16 @@
 title: vandenhoek.aero
 lang: nl
 
-#theme: jekyll-theme-hacker
-remote_theme: b2a3e8/jekyll-theme-console
+theme: jekyll-theme-hacker
+#remote_theme: b2a3e8/jekyll-theme-console
 
-header_pages:
+#header_pages:
   - index.md
   - about.md
-  - linkedin.com
 
-style: dark # dark (default), light or hacker
+#style: dark # dark (default), light or hacker
 listen_for_clients_preferred_style: false # false (default) or true
 
-footer: '<a href="https://vandenhoek.aero">vandenhoek.aero</a>'
+#footer: '<a href="https://vandenhoek.aero">vandenhoek.aero</a>'
 
 robots: NOINDEX
