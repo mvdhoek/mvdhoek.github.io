@@ -1,10 +1,4 @@
 theme: jekyll-theme-hacker
 #remote_theme: b2a3e8/jekyll-theme-console
 
-header_pages:
-  - index.md
-  - about.md
-
-footer: '<a href="https://vandenhoek.aero">vandenhoek.aero</a>'
-
 robots: NOINDEX
