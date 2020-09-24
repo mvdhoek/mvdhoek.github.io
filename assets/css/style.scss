@@ -11,10 +11,12 @@ footer {
   display: none !important;
 }
 
+a {
+  text-decoration: none  
+}
+
 a:hover {
+  color: black;
   background-color: white;
 }
 
-h1 {
-  text-decoration: none  
-}
