@@ -21,45 +21,6 @@ talkmap_link             : false #change to true to add link to talkmap on talks
 atom_feed:
   path                   : # blank (default) uses feed.xml
 
-# Site Author
-author:
-  name             : 
-  avatar           : 
-  bio              : 
-  location         : "The Netherlands"
-  employer         :
-  pubmed           :
-  googlescholar    :
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "mvdhoek"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : "replacethistwitterhandle"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
-
-
 # Outputting
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
@@ -82,3 +43,6 @@ whitelist:
   - jekyll-feed
   - jemoji
 
+# Disable the "View on Github" button
+github:
+  is_project_page: false
