@@ -33,6 +33,8 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Projects / Repositories
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Having trouble with Pages? 
+- Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) 
+- [contact support](https://github.com/contact) and we’ll help you sort it out.
 
 
