@@ -1,5 +1,6 @@
 # Home
 This is header level 1.
+Test **Bold**, _italic_.
 
 ## Home 2
 You can use the [editor on GitHub](https://github.com/mvdhoek/mvdhoek.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
