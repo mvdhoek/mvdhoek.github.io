@@ -5,11 +5,11 @@ Test **Bold**, _italic_.
 ## Home 2
 You can use the [editor on GitHub](https://github.com/mvdhoek/mvdhoek.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files. An example of an equation block where \\( \phi = f(x) \\):
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files. An example of an equation block where \\( \C_L = f(\alpha) \\):
 
 $$
 \begin{equation}
-  \phi(x) = \iint 5x^2 ~dx
+  L = C_L \left( \alpha \right) \frac{1}{2} \rho v_{\infty}^2 S
   \tag{1}
 \end{equation}
 $$
