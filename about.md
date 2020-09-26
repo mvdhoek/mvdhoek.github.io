@@ -13,7 +13,7 @@ On this page, place some about info.
 
 #### yes, even hidden code blocks!
 
-```python
+```
 print("hello world!")
 ```
 
