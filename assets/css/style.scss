@@ -24,6 +24,10 @@ a.current-page {
   text-decoration: line-through;
 }
 
+a.current-page:hover {
+  color: none;
+}
+
 header h1 {
   font-weight: normal;
 }
