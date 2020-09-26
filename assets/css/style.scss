@@ -41,11 +41,13 @@ header h1:before {
   content: '   ';
   font-size: 24px;
   color: grey;
+  font-family: 'Roboto Mono', monospace;
 }
 
 h1 {
   font-size: 24px;
   margin: 0 0 0 -40px;
+  font-family: 'Roboto Mono', monospace;
 }
 
 h1:before {
