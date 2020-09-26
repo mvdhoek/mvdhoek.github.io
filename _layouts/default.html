@@ -16,7 +16,17 @@
     MathJax.Hub.Config({
       "HTML-CSS": {
         fonts: ["Gyre-Pagella", "STIX"]
-       }
+       },
+      TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
     });                                                                                                                                   
     </script>
     <script type="text/javascript" async
