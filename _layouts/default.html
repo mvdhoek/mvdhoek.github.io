@@ -26,13 +26,7 @@
 
     <div class="container">
       <section id="main_content">
-        {% include breadcrumbs.html %}
-        
-        Test nav
-        {% for nav in site.data.navigation %}
-        <li{% if navigation.url == page.url %} class="active"{% endif %}><a href="{{ navigation.url }}">{{ navigation.text }}</a></li>
-        {% endfor %}
-        
+        {% include breadcrumbs.html %}        
         {{ content }}
       </section>
     </div>
