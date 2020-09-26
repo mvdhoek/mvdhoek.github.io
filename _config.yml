@@ -5,7 +5,7 @@ robots: NOINDEX
 
 # Site Settings
 title                    : "vandenhoek.aero"
-#description              : &description "personal pages" # shows as subtitle
+description              : &description "Personal repository" # shows as subtitle
 url                      : https://vandenhoek.aero # the base hostname
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "mvdhoek/mvdhoek.github.io"
