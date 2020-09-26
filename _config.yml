@@ -4,7 +4,7 @@ theme: jekyll-theme-hacker
 robots: NOINDEX
 
 # Site Settings
-title                    : "vandenhoek.aero"
+title                    : "VANDENHOEK.aero"
 description              : &description "Personal repository" # shows as subtitle
 url                      : https://vandenhoek.aero # the base hostname
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
