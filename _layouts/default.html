@@ -25,11 +25,11 @@
           {% for link in site.navigation %}
           {% assign current = nil %}
           {% if page.url == link.url or page.layout == link.layout %}
-          {% assign current = 'current' %}
+            {% assign current = 'current-page' %}
           {% endif %}
-            <div class="{% if forloop.first %}first{% endif %} {{ current-page }} {% if forloop.last %}last{% endif %}">
-              <a class="{{ current-page }}" href="{{ link.url }}">{{ link.text }}</a>
-            </div>
+
+              <a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
+
           {% endfor %}
           </ul>
           {% endunless %}
