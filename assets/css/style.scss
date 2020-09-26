@@ -20,6 +20,11 @@ a:hover {
   background-color: white;
 }
 
+a.current-page {
+  color: green;
+  text-decoration: line-through;
+}
+
 header h1 {
   font-weight: normal;
 }
@@ -49,8 +54,4 @@ li.active a {
 cd {
   font-size: 10px;
   color: grey;
-}
-
-current-page {
-  color: green;
 }
