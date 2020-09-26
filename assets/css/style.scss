@@ -20,11 +20,11 @@ a:hover {
   background-color: white;
 }
 
-h1 {
+header h1 {
   font-weight: normal;
 }
 
-h1:before {
+header h1:before {
   content: '~S';
   font-size: 24px;
 }
