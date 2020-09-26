@@ -20,21 +20,13 @@
 
         <section id="page-navigation">
           <!-- // <a href='/index'>Home</a> // <a href='/about'>About</a> // -->
-          {% unless page.layout == 'front' %}
-          <ul class="navigation">
           {% for link in site.navigation %}
-          {% assign current = nil %}
-          {% if page.url == link.url or page.layout == link.layout %}
-            {% assign current = 'current-page' %}
-          {% endif %}
-
-              <a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
-
-          {% endfor %}
-          </ul>
-          {% endunless %}
-          
-          
+            {% assign current = nil %}
+            {% if page.url == link.url or page.layout == link.layout %}
+              {% assign current = 'current-page' %}
+            {% endif %}
+            // <a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
+          {% endfor %}         
         </section>
       </div>
     </header>
