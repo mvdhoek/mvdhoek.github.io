@@ -34,7 +34,6 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 #### Header 4
 ##### Header 5
 ###### Header 6
-####### Header 7
 
 ### Jekyll Themes
 
