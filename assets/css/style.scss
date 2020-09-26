@@ -46,6 +46,7 @@ header h1:before {
   content: '\f135 \f0fb';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
+  font-size: 16px;
   color: grey;
 }
 
@@ -57,7 +58,7 @@ h1 {
 
 h1:before {
   content: '~$ ';
-  font-size: 12px;
+  font-size: 24px;
   color: grey;
 }
 
