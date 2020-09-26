@@ -10,6 +10,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 $$
 \begin{equation}
   \phi(x) = \iint 5x^2 ~dx
+  \tag{1}
 \end{equation}
 $$
 
@@ -27,6 +28,7 @@ $$
       \vdots \\
       y_n
     \end{array} \right)
+    \tag{2}
 \end{align}
 $$
 
