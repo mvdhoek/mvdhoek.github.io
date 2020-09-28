@@ -1,3 +1,8 @@
+---
+layout: default
+title: About | vandenhoek.aero
+---
+
 # About
 
 This is the about page.
