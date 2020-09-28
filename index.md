@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # Home
 This is header level 1.
 Test **Bold**, _italic_.
