@@ -1,63 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <meta name="robots" content="noindex" />
-    
-    <title>{{ page.title }}</title>
-    
-    <!-- Load external CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Share+Tech+Mono&family=Comfortaa:wght@300&family=Roboto+Mono:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.14.0/css/all.css'/>
-    
-    <!-- Mathjax Support -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      "HTML-CSS": {
-        fonts: ["Gyre-Pagella", "STIX"],
-        scale: 85
-      },
-      tex: {
-        tags: 'ams'
-      }
-    });                                                                                                                                   
-    </script>
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script> 
-                                                                                                                                          
-  </head>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
 
   <body>
-
-    <header>
-      <div class="container">
-        <a id="a-title" href="{{ '/' | relative_url }}">
-          <h1>{{ site.title }}</h1>
-        </a>
-        <h2>{{ site.description }}</h2>
-
-        <section id="page-navigation">
-          <!-- // <a href='/index'>Home</a> // <a href='/about'>About</a> // -->
-          {% for link in site.navigation %}
-            {% assign current = nil %}
-            {% if page.url == link.url or page.layout == link.layout %}
-              {% assign current = 'current-page' %}
-            {% endif %}
-            // <a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
-          {% endfor %} //        
-        </section>
-      </div>
-    </header>
-
     <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
+
+      {%- include header.html -%}
+
+    <main>
+      {{ content }}
+    </main>
+
+    {%- include footer.html -%}
+
     </div>
-    
   </body>
 </html>
