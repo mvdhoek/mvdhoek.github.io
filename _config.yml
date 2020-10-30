@@ -24,10 +24,21 @@ permalink: /:categories/:title/
 # paginate_path: /page:num/
 timezone: Europe/Amsterdam # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+# Header
+header_pages:
+  - index.md
+  - about.md
+  
+style: dark
+listen_for_clients_preferred_style: false
+
+footer: 'vandenhoek.aero'
+
+robots: noindex
 
 # Page navigation
-navigation:
-  - text: Home
-    url: /
-  - text: About
-    url: /about/
+#navigation:
+#  - text: Home
+#    url: /
+#  - text: About
+#    url: /about/
