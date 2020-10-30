@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home | vandenhoek.aero
+title: Home
 ---
 
 # Home
