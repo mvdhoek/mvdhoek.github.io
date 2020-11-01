@@ -1,7 +1,5 @@
-theme: jekyll-theme-hacker
-#remote_theme: b2a3e8/jekyll-theme-console
-
-robots: NOINDEX
+#theme: jekyll-theme-hacker
+theme: jekyll-theme-console
 
 # Site Settings
 title                    : "vandenhoek.aero"
@@ -24,16 +22,18 @@ permalink: /:categories/:title/
 # paginate_path: /page:num/
 timezone: Europe/Amsterdam # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-# Header
+# Header and footer
 header_pages:
   - index.md
   - about.md
-  
+  - misc.md
+footer: 'vandenhoek.aero'
+
+# Styling  
 style: dark
 listen_for_clients_preferred_style: false
 
-footer: 'vandenhoek.aero'
-
+# noindex
 robots: noindex
 
 # Page navigation
