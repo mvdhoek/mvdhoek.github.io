@@ -9,7 +9,7 @@ $base-font-size:       16px !default;
 $mobile-font-size:     14px !default;
 $base-line-height:     1.5 !default;
 $container-width:      90% !default;
-$container-max-width:  1000px !default;
+$container-max-width:  900px !default;
 
 /**
  * Global
@@ -56,12 +56,12 @@ footer { margin-bottom: 20px; }
  * Header/Navigation
  */
 .menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: 25px; }
-.menu ul { margin-top: 12px;  margin-bottom: 12px;  padding-left: 0px;  list-style-type: none;  text-align: right; }
+.menu ul { margin-top: 12px;  margin-bottom: 12px;  padding-left: 0px;  list-style-type: none;  text-align: right; font-size: 18px; }
 .menu ul li { display: inline;  margin-left: 10px; }
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
 .menu ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 
-.menu ul li a.current-page { text-decoration: line-through;  color: var(--text-color);  background-color: var(--background-color); }
+.menu ul li a.current-page { text-decoration: line-through;  color: var(--text-color); }
 .menu ul li a.current-page:hover { text-decoration: line-through; color: var(--background-color); background-color: var(--text-color); }
 
 
