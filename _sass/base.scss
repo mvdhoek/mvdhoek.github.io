@@ -61,8 +61,8 @@ footer { margin-bottom: 20px; }
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
 .menu ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 
-.menu ul li a.current-page { text-decoration: line-through;  color: var(--text-color); }
-.menu ul li a.current-page:hover { text-decoration: none; color: var(--text-color); background-color: none; }
+.menu ul li a.current-page { text-decoration: line-through;  color: var(--text-color);  background-color: var(--background-color); }
+.menu ul li a.current-page:hover { text-decoration: line-through; color: var(--background-color); background-color: var(--text-color); }
 
 
 /**
