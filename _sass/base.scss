@@ -17,10 +17,10 @@ $container-max-width:  1000px !default;
 body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
 h1, h2, h3, h4, h5, h6 { margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
 
-h1 { font-size: 22; }
-h1:before { content: '~$ ';  font-size: 22px;  color: grey; }
-h2 { font-size: 20; }
-h3 { font-size: 18; }
+h1 { font-size: 20;  margin: 0 0 0 -40px; }
+h1:before { content: '~$ ';  font-size: 20px;  color: grey; }
+h2 { font-size: 18; }
+h3 { font-size: 16; }
 h4 { font-size: 16; }
 h5 { font-size: 16; }
 h6 { font-size: 16; }
@@ -85,7 +85,11 @@ textarea { vertical-align: top; }
  */
 .lineno { color: var(--code-color-1); margin-right: 15px; }
 figure.highlight { margin: 5px 0; }
-pre { background-color: var(--background-color);  border: none;  padding: 0;  margin: 0;  overflow:auto;  font-size: $base-font-size;  color: var(--text-color);  line-height: 1.7 !important;  font-family: $base-font-family !important; }
+pre {
+  font-family: 'Cutive Mono', monospace !important;
+  background: rgba(42, 42, 42, 0.9);
+}
+/**pre { background-color: var(--background-color);  border: none;  padding: 0;  margin: 0;  overflow:auto;  font-size: $base-font-size;  color: var(--text-color);  line-height: 1.7 !important;  font-family: $base-font-family !important; }*/
 .highlight .hll { background-color: var(--code-color-2); }
 .highlight .c { color: var(--code-color-1); font-style: italic } /* Comment */
 .highlight .err { color: var(--code-color-3); background-color: var(--code-color-4); } /* Error */
