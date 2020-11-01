@@ -5,7 +5,7 @@
  * Style variables
  */
 $base-font-family:     'Roboto Mono', monospace;
-$base-font-size:       15px !default;
+$base-font-size:       16px !default;
 $mobile-font-size:     14px !default;
 $base-line-height:     1.5 !default;
 $container-width:      90% !default;
@@ -15,7 +15,16 @@ $container-max-width:  1000px !default;
  * Global
  */
 body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
-h1, h2, h3, h4, h5, h6 { font-size: $base-font-size;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
+h1, h2, h3, h4, h5, h6 { margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
+
+h1 { font-size: 22; }
+h1:before { content: '~$ ';  font-size: 22px;  color: grey; }
+h2 { font-size: 20; }
+h3 { font-size: 18; }
+h4 { font-size: 16; }
+h5 { font-size: 16; }
+h6 { font-size: 16; }
+
 p, ul, ol { margin: 0px;  color: var(--text-color); }
 a { text-decoration: underline;  color: var(--link-color); }
 a:hover { color: var(--background-color); background-color: var(--base-color); }
