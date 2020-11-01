@@ -87,6 +87,7 @@ figure.highlight { margin: 5px 0; }
 pre { font-family: 'Cutive Mono', monospace !important;  background: rgba(42, 42, 42, 0.9); }
 code { margin: 0 0 0 -40px; }
 code:before { content: '\f120      ';  font-family: 'Font Awesome 5 Free';  color: grey;  font-weight: 900; }
+code.language-plaintext.highlighter-rouge:before { content: "";  margin-left: 40px; }
 
 /**pre { background-color: var(--background-color);  border: none;  padding: 0;  margin: 0;  overflow:auto;  font-size: $base-font-size;  color: var(--text-color);  line-height: 1.7 !important;  font-family: $base-font-family !important; }*/
 

@@ -7,4 +7,4 @@ title: /About
 
 - [LinkedIn](https://marlon.vandenhoek.aero)
 - [Raw](/data/resume_raw.json)
-- [Compiled](link_to_compiled)
+- [Compiled](/data/resume_compiled.html)
