@@ -87,6 +87,7 @@ laborem nec viribus. Flamma nec, sub que tamen regno; omen fieres pinguesque
 habenti terrae! [An](http://quid.net/et) belli. Mirumque precibus, nec breve
 illi inmotos solacia et portis. Habentia undis.
 
+```cpp
     if (network_device_smishing.ataRestore.menuImport(reimageSoftwareMashup) !=
             middleware / hardening_inbox_copy) {
         map_word(dvd.mms_shareware_shell(drop_text_hertz, framework),
@@ -105,6 +106,7 @@ illi inmotos solacia et portis. Habentia undis.
     sql.floppyUpload.nuiSoftForum(lock_whois_nosql(metaMini, footerRteRead,
             dialog_bar_excel), ioText, alu_file_exif(mnemonicMultiKde, 4, -1 /
             checksum));
+```
 
 ## Voluitque illuc
 
