@@ -47,6 +47,32 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 ##### Header 5
 ###### Header 6
 
+```python
+# Number of rows for each chunk
+size = 4e7 # 40 Millions
+reader = pd.read_csv('user_logs.csv', chunksize = size, index_col = ['msno'])
+start_time = time.time()
+
+for i in range(10):
+    user_log_chunk = next(reader)
+    if(i==0):
+        result = process_user_log(user_log_chunk)
+        print("Number of rows ",result.shape[0])
+        print("Loop ",i,"took %s seconds" % (time.time() - start_time))
+    else:
+        result = result.append(process_user_log(user_log_chunk))
+        print("Number of rows ",result.shape[0])
+        print("Loop ",i,"took %s seconds" % (time.time() - start_time))
+    del(user_log_chunk)    
+
+# Unique users vs Number of rows after the first computation    
+print("size of result:", len(result))
+check = result.index.unique()
+print("unique user in result:", len(check))
+
+result.columns = ['_'.join(col).strip() for col in result.columns.values]
+```
+
 ### Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mvdhoek/mvdhoek.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
