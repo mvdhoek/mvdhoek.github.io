@@ -84,7 +84,7 @@ margin-left
  */
 .lineno { color: var(--code-color-1); margin-right: 15px; }
 figure.highlight { margin: 5px 0; }
-code { margin: 0 0 0 -40px; }
+code { margin: 0 0 0 -40px; white-space: pre-wrap;}
 code:before { content: '\f120      ';  font-family: 'Font Awesome 5 Free';  color: grey;  font-weight: 900; }
 code.language-plaintext.highlighter-rouge:before { content: "";  margin-left: 40px; }
 

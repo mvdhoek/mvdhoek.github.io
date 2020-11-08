@@ -8,7 +8,7 @@ title:  "Backing up with Borg"
 ## Make sure you have Borg
 First make sure you have installed Borg on your system. If you have a Debian based distro, it's as easy as:
 
-```
+```bash
 sudo apt-get install python3 python3-dev python3-pip python-virtualenv \
 libssl-dev openssl \
 libacl1-dev libacl1 \
