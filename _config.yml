@@ -23,7 +23,7 @@ header_pages:
   - index.md
   - about.md
   - misc.md
-footer: 'vandenhoek.aero'
+footer: ''
 
 # Styling  
 style: dark
