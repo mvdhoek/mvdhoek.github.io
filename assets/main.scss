@@ -218,13 +218,15 @@ a {
 
 .iis-slide__meta-list {
   margin: 0;
+  display: grid;
+  gap: 0.45rem;
 }
 
 .iis-slide__meta-list div {
   display: grid;
   grid-template-columns: 5.6rem 1fr;
   gap: 0.35rem 0.7rem;
-  padding: 0.18rem 0;
+  padding: 0;
 }
 
 .iis-slide__meta-list dt,
