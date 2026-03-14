@@ -16,13 +16,24 @@
     {% unless image_src contains '://' %}
       {% assign image_src = image_src | relative_url %}
     {% endunless %}
-    <figure class="iis-slide{% if forloop.first %} is-active{% endif %}" data-slide aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
+    <figure
+      class="iis-slide{% if forloop.first %} is-active{% endif %}"
+      data-slide
+      aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+      {% if item.annotation_color %}style="--annotation-color: {{ item.annotation_color }};"{% endif %}
+    >
       <img
         class="iis-slide__image"
         src="{{ image_src }}"
         alt="{{ item.alt | default: '' }}"
         {% if forloop.first %}fetchpriority="high"{% endif %}
       >
+      {% if item.annotation_place or item.annotation_coords %}
+      <div class="iis-slide__annotation">
+        {% if item.annotation_place %}<p class="iis-slide__annotation-place">{{ item.annotation_place }}</p>{% endif %}
+        {% if item.annotation_coords %}<p class="iis-slide__annotation-coords">{{ item.annotation_coords }}</p>{% endif %}
+      </div>
+      {% endif %}
       {% if item.caption or item.title %}
       <figcaption class="iis-slide__caption">
         {% if item.title %}<h1 class="iis-slide__title">{{ item.title }}</h1>{% endif %}
