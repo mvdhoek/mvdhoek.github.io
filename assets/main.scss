@@ -81,13 +81,13 @@ a {
 .iis-slide__image {
   position: absolute;
   inset:
-    calc(env(safe-area-inset-top, 0px) * -1)
+    calc((env(safe-area-inset-top, 0px) + 12px) * -1)
     0
     calc(env(safe-area-inset-bottom, 0px) * -1)
     0;
   display: block;
   width: 100%;
-  height: calc(100% + env(safe-area-inset-top, 0px) + env(safe-area-inset-bottom, 0px));
+  height: calc(100% + env(safe-area-inset-top, 0px) + env(safe-area-inset-bottom, 0px) + 12px);
   object-fit: cover;
   object-position: center;
   -webkit-user-drag: none;
@@ -99,7 +99,7 @@ a {
 .iis-slide__guard {
   position: absolute;
   inset:
-    calc(env(safe-area-inset-top, 0px) * -1)
+    calc((env(safe-area-inset-top, 0px) + 12px) * -1)
     0
     calc(env(safe-area-inset-bottom, 0px) * -1)
     0;
