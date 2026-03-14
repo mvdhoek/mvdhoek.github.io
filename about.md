@@ -1,10 +1,9 @@
 ---
-layout: page
-title: /About
+layout: default
+title: About
 ---
 
-# About
-
-- [LinkedIn](https://marlon.vandenhoek.aero)
-- [Raw](/data/resume_raw.json)
-- [Compiled](/data/resume_compiled.html)
+<main class="page-shell">
+  <h1>About</h1>
+  <p>This page exists so the slider CTA has a local target. Replace it with your own project page or remove the links.</p>
+</main>
