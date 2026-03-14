@@ -16,9 +16,11 @@
 html,
 body {
   margin: 0;
+  width: 100%;
   min-height: 100%;
   background: var(--bg);
   color: var(--fg);
+  overflow-x: hidden;
 }
 
 body {
@@ -31,12 +33,15 @@ a {
 
 .iis-slider {
   position: relative;
+  width: 100vw;
   overflow: hidden;
   background: #000;
 }
 
 .iis-slider--fullscreen,
 .iis-slider__track {
+  width: 100vw;
+  height: 100vh;
   min-height: 100vh;
 }
 
@@ -47,6 +52,7 @@ a {
 .iis-slide {
   position: absolute;
   inset: 0;
+  margin: 0;
   opacity: 0;
   visibility: hidden;
   transition: opacity 450ms ease, visibility 0ms linear 450ms;
@@ -104,14 +110,14 @@ a {
 
 .iis-slider__ui {
   position: absolute;
-  right: clamp(1rem, 3vw, 3rem);
   bottom: clamp(1rem, 3vw, 2rem);
-  left: clamp(1rem, 3vw, 3rem);
+  left: 50%;
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
+  transform: translateX(-50%);
 }
 
 .iis-slider__dots {
@@ -156,10 +162,6 @@ a {
 }
 
 @media (max-width: 720px) {
-  .iis-slider__ui {
-    flex-wrap: wrap;
-  }
-
   .iis-slide__caption {
     bottom: 5.75rem;
     width: min(32rem, calc(100% - 2rem));
