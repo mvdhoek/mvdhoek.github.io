@@ -15,9 +15,9 @@ image_sliders:
         metadata:
           make: FUJIFILM
           model: X-S10
-          focal_length: 35mm
-          f_number: f/2.8
-          exposure_time: 1/250s
+          focal_length: 22,3mm
+          f_number: f/5,6
+          exposure_time: 1/220s
         #alt: Local slider image DSCF1216
         #title: Strategy in Motion
         #caption: The slider now loads directly from files in assets/#images, which is the safer setup for GitHub Pages.
@@ -28,9 +28,9 @@ image_sliders:
         metadata:
           make: FUJIFILM
           model: X-S10
-          focal_length: 35mm
-          f_number: f/2.8
-          exposure_time: 1/250s
+          focal_length: 80mm
+          f_number: f/5
+          exposure_time: 1/320s
         #alt: Local slider image DSCF1224
         #title: Fullscreen First
         #caption: Each slide uses a published local asset path instead #of a remote image host.
@@ -41,9 +41,9 @@ image_sliders:
         metadata:
           make: FUJIFILM
           model: X-S10
-          focal_length: 35mm
-          f_number: f/2.8
-          exposure_time: 1/250s
+          focal_length: 19,2mm
+          f_number: f/5,6
+          exposure_time: 1/200s
         #alt: Local slider image DSCF1225
         #title: Easy To Extend
         #caption: From here we can tune transitions, captions, and #layout without changing the asset pipeline.
@@ -54,9 +54,9 @@ image_sliders:
         metadata:
           make: FUJIFILM
           model: X-S10
-          focal_length: 35mm
-          f_number: f/2.8
-          exposure_time: 1/250s
+          focal_length: 65,2mm
+          f_number: f/4,5
+          exposure_time: 1/300s
         #alt: Local slider image DSCF1270
         #title: Local Asset Workflow
         #caption: Add more images to assets/images and reference them #here in front matter.
