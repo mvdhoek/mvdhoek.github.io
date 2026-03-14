@@ -1,33 +1,4 @@
 function initImageSliders() {
-  const parseDmsPart = (part) => {
-    if (!part) return null;
-
-    const match = part.trim().match(/(\d+(?:\.\d+)?)°\s*(\d+(?:\.\d+)?)'\s*(\d+(?:\.\d+)?)"\s*([NSEW])/i);
-    if (!match) return null;
-
-    const degrees = Number(match[1]);
-    const minutes = Number(match[2]);
-    const seconds = Number(match[3]);
-    const hemisphere = match[4].toUpperCase();
-
-    let decimal = degrees + minutes / 60 + seconds / 3600;
-    if (hemisphere === "S" || hemisphere === "W") decimal *= -1;
-    return decimal;
-  };
-
-  const parseCoordinatePair = (value) => {
-    if (!value) return null;
-
-    const parts = value.match(/\d+(?:\.\d+)?°\s*\d+(?:\.\d+)?'\s*\d+(?:\.\d+)?"\s*[NSEW]/gi);
-    if (!parts || parts.length < 2) return null;
-
-    const lat = parseDmsPart(parts[0]);
-    const lng = parseDmsPart(parts[1]);
-
-    if (lat === null || lng === null) return null;
-    return { lat, lng };
-  };
-
   const sliders = document.querySelectorAll("[data-image-slider]");
 
   sliders.forEach((slider) => {
@@ -78,10 +49,9 @@ function initImageSliders() {
       if (!canvas || !window.L) return null;
       if (canvas._leaflet_map_instance) return canvas._leaflet_map_instance;
 
-      const coords = parseCoordinatePair(canvas.dataset.coords);
-      if (!coords) return null;
-
-      const { lat, lng } = coords;
+      const lat = Number(canvas.dataset.lat);
+      const lng = Number(canvas.dataset.lng);
+      if (Number.isNaN(lat) || Number.isNaN(lng)) return null;
       const zoom = Number(canvas.dataset.zoom || 11);
 
       const map = window.L.map(canvas, {

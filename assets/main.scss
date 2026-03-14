@@ -129,11 +129,12 @@ a {
 
 .iis-slide__title {
   margin: 0;
-  font-family: "Instrument Serif", serif;
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: 400;
+  font-family: "Manrope", sans-serif;
+  font-size: 7.5rem;
+  font-weight: 200;
   line-height: 0.92;
   letter-spacing: -0.04em;
+  color: var(--title-color, var(--fg));
 }
 
 .iis-slide__text {
@@ -388,6 +389,10 @@ a {
   .iis-slide__caption {
     bottom: 5.75rem;
     width: min(32rem, calc(100% - 2rem));
+  }
+
+  .iis-slide__title {
+    font-size: clamp(3.5rem, 14vw, 7.5rem);
   }
 
   .iis-slide__annotation {

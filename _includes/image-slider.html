@@ -23,7 +23,7 @@
       data-slide
       data-protected-slide
       aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
-      {% if item.annotation_color %}style="--annotation-color: {{ item.annotation_color }};"{% endif %}
+      style="{% if item.annotation_color %}--annotation-color: {{ item.annotation_color }}; {% endif %}{% if item.title_color %}--title-color: {{ item.title_color }};{% endif %}"
     >
       <img
         class="iis-slide__image"
@@ -59,7 +59,7 @@
       {% assign show_location_map = slider.show_location_map | default: true %}
       {% if item.annotation_place or item.annotation_coords %}
       <div class="iis-slide__annotation-wrap">
-        {% if show_location_map and item.annotation_coords %}
+        {% if show_location_map and item.annotation_lat and item.annotation_lng %}
         <button
           type="button"
           class="iis-slide__annotation iis-slide__annotation-toggle"
@@ -74,7 +74,8 @@
           <div
             class="iis-slide__map-canvas"
             data-map-canvas
-            data-coords="{{ item.annotation_coords }}"
+            data-lat="{{ item.annotation_lat }}"
+            data-lng="{{ item.annotation_lng }}"
             data-zoom="{{ item.annotation_zoom | default: 11 }}"
           ></div>
         </div>
