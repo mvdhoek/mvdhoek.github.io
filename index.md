@@ -5,7 +5,7 @@ description: ""
 image_sliders:
   - label: Home slider
     autoplay: true
-    interval: 5500
+    interval: 7500
     images:
       - image: /assets/images/DSCF1216.jpg
         #alt: Local slider image DSCF1216

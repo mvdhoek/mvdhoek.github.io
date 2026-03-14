@@ -5,3 +5,5 @@ baseurl: ""
 timezone: Europe/Amsterdam
 markdown: kramdown
 permalink: pretty
+robots: "noindex, nofollow, noarchive, nosnippet, noimageindex"
+googlebot: "noindex, nofollow, noarchive, nosnippet, noimageindex"

@@ -1,0 +1,74 @@
+# Site crawling policy
+# - Search engines are allowed to crawl so they can see the page-level noindex tags.
+# - AI/training/search-assistant bots are explicitly blocked where they declare a user-agent.
+# - All other unspecified crawlers are blocked by default.
+# - This is a best-effort standard; only compliant bots will honor it.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Image
+Allow: /
+
+User-agent: GoogleOther-Video
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Amzn-SearchBot
+Disallow: /
+
+User-agent: Amzn-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: DuckAssistBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: *
+Disallow: /
