@@ -20,7 +20,7 @@ image_sliders:
           focal_length: 22,3mm
           f_number: f/5,6
           exposure_time: 1/220s
-        alt: Local slider image DSCF1216
+        alt: Picture of Misty Cliffs in South Africa
         title: Strategy in Motion
         caption: The slider now loads directly from files in assets/images, which is the safer setup for GitHub Pages.
       - image: /assets/images/DSCF1224.jpg
@@ -34,7 +34,7 @@ image_sliders:
           focal_length: 80mm
           f_number: f/5
           exposure_time: 1/320s
-        #alt: Local slider image DSCF1224
+        alt: Lizzard in Table Mountain National Park in South Africa
         #title: Fullscreen First
         #caption: Each slide uses a published local asset path instead #of a remote image host.
       - image: /assets/images/DSCF1225.jpg
@@ -48,7 +48,7 @@ image_sliders:
           focal_length: 19,2mm
           f_number: f/5,6
           exposure_time: 1/200s
-        #alt: Local slider image DSCF1225
+        alt: View of False Bay from Table Mountain National Park in South Africa
         #title: Easy To Extend
         #caption: From here we can tune transitions, captions, and #layout without changing the asset pipeline.
       - image: /assets/images/DSCF1270.jpg
@@ -62,7 +62,7 @@ image_sliders:
           focal_length: 65,2mm
           f_number: f/4,5
           exposure_time: 1/300s
-        #alt: Local slider image DSCF1270
+        alt: Peak of Lion's Head as seen from Table Mountain, South Africa.
         #title: Local Asset Workflow
         #caption: Add more images to assets/images and reference them #here in front matter.
 ---

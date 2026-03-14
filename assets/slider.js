@@ -96,9 +96,10 @@ function initImageSliders() {
         touchZoom: true
       }).setView([lat, lng], zoom);
 
-      window.L.tileLayer("https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png", {
+      window.L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+        subdomains: ["a", "b", "c"],
         attribution:
-          '&copy; <a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a> <a href="https://openmaps.fr/donate">Donation</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://viewfinderpanoramas.org/">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org/">OpenTopoMap</a> (CC-BY-SA)',
         maxZoom: 17
       }).addTo(map);
 
