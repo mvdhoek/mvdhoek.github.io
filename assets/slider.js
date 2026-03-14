@@ -53,13 +53,13 @@ function initImageSliders() {
       const map = window.L.map(canvas, {
         zoomControl: false,
         attributionControl: true,
-        dragging: false,
-        scrollWheelZoom: false,
-        doubleClickZoom: false,
+        dragging: true,
+        scrollWheelZoom: true,
+        doubleClickZoom: true,
         boxZoom: false,
         keyboard: false,
         tap: false,
-        touchZoom: false
+        touchZoom: true
       }).setView([lat, lng], zoom);
 
       window.L.tileLayer("https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png", {
