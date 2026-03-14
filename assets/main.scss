@@ -80,12 +80,23 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
+}
+
+.iis-slide__guard {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
 }
 
 .iis-slide__caption {
   position: absolute;
   inset: auto auto clamp(4.5rem, 8vw, 6rem) clamp(1.25rem, 3vw, 3rem);
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -123,7 +134,7 @@ a {
   right: auto;
   bottom: clamp(1rem, 3vw, 2rem);
   left: 50%;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   width: max-content;
   max-width: calc(100% - 2rem);
@@ -152,7 +163,7 @@ a {
   position: absolute;
   right: clamp(1rem, 3vw, 2.5rem);
   bottom: clamp(1.75rem, 4vw, 2.75rem);
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -168,12 +179,18 @@ a {
   margin: 0;
 }
 
+.iis-slider,
+.iis-slide,
+.iis-slide__guard {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .iis-slide__annotation-place {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Arapey", serif;
   font-size: clamp(1rem, 1.35vw, 1.35rem);
-  font-weight: 500;
-  font-variant: small-caps;
-  letter-spacing: 0.12em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   line-height: 1;
 }
 

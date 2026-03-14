@@ -19,6 +19,7 @@
     <figure
       class="iis-slide{% if forloop.first %} is-active{% endif %}"
       data-slide
+      data-protected-slide
       aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
       {% if item.annotation_color %}style="--annotation-color: {{ item.annotation_color }};"{% endif %}
     >
@@ -26,8 +27,10 @@
         class="iis-slide__image"
         src="{{ image_src }}"
         alt="{{ item.alt | default: '' }}"
+        draggable="false"
         {% if forloop.first %}fetchpriority="high"{% endif %}
       >
+      <div class="iis-slide__guard" aria-hidden="true"></div>
       {% if item.annotation_place or item.annotation_coords %}
       <div class="iis-slide__annotation">
         {% if item.annotation_place %}<p class="iis-slide__annotation-place">{{ item.annotation_place }}</p>{% endif %}

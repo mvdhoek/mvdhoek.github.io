@@ -66,6 +66,18 @@ function initImageSliders() {
       if (event.key === "ArrowRight") step(1);
     });
 
+    slider.addEventListener("contextmenu", (event) => {
+      if (event.target.closest("[data-protected-slide]")) {
+        event.preventDefault();
+      }
+    });
+
+    slider.addEventListener("dragstart", (event) => {
+      if (event.target.closest("[data-protected-slide]")) {
+        event.preventDefault();
+      }
+    });
+
     setActiveSlide(0);
     resetAutoplay();
   });
