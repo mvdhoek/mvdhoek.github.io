@@ -43,7 +43,11 @@
           aria-expanded="false"
           aria-label="Show image information"
         >
-          <img class="iis-slide__meta-icon" src="{{ '/assets/icons/camera-aperture-icon.svg' | relative_url }}" alt="">
+          <span
+            class="iis-slide__meta-icon"
+            aria-hidden="true"
+            style="--meta-icon-url: url('{{ '/assets/icons/camera-aperture-icon.svg' | relative_url }}');"
+          ></span>
         </button>
         <div class="iis-slide__meta-panel" data-meta-panel hidden>
           <dl class="iis-slide__meta-list">
