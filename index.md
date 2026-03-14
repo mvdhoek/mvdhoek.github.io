@@ -1,6 +1,6 @@
 ---
 layout: home
-title: vandenhoek.aero
+title: showcase
 description: ""
 image_sliders:
   - label: Home slider
