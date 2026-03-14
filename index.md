@@ -7,16 +7,20 @@ image_sliders:
     autoplay: true
     interval: 5500
     images:
-      - image: https://images.unsplash.com/photo-1511300636408-a63a89df3482?auto=format&fit=crop&w=1800&q=80
-        alt: Abstract architecture with dramatic light
-        title: Strategy in Motion
-        caption: A simpler fullscreen slider structure, using a Jekyll include pattern similar to the example you linked.
-      - image: https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80
-        alt: Desert road with wide horizon
-        title: Fullscreen First
-        caption: Each slide fills the viewport, fades between images, and keeps the navigation minimal.
-      - image: https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1800&q=80
-        alt: Forest reflected in a lake
-        title: Easy To Extend
-        caption: From here we can add project links, stacked text, vertical slide motion, or closer Collins-style pacing.
+      - image: /assets/images/DSCF1216.jpg
+        #alt: Local slider image DSCF1216
+        #title: Strategy in Motion
+        #caption: The slider now loads directly from files in assets/#images, which is the safer setup for GitHub Pages.
+      - image: /assets/images/DSCF1224.jpg
+        #alt: Local slider image DSCF1224
+        #title: Fullscreen First
+        #caption: Each slide uses a published local asset path instead #of a remote image host.
+      - image: /assets/images/DSCF1225.jpg
+        #alt: Local slider image DSCF1225
+        #title: Easy To Extend
+        #caption: From here we can tune transitions, captions, and #layout without changing the asset pipeline.
+      - image: /assets/images/DSCF1270.jpg
+        #alt: Local slider image DSCF1270
+        #title: Local Asset Workflow
+        #caption: Add more images to assets/images and reference them #here in front matter.
 ---

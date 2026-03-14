@@ -12,10 +12,14 @@
 >
   <div class="iis-slider__track">
     {% for item in slider.images %}
+    {% assign image_src = item.image %}
+    {% unless image_src contains '://' %}
+      {% assign image_src = image_src | relative_url %}
+    {% endunless %}
     <figure class="iis-slide{% if forloop.first %} is-active{% endif %}" data-slide aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
       <img
         class="iis-slide__image"
-        src="{{ item.image }}"
+        src="{{ image_src }}"
         alt="{{ item.alt | default: '' }}"
         {% if forloop.first %}fetchpriority="high"{% endif %}
       >
