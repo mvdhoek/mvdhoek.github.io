@@ -7,15 +7,31 @@ function initImageSliders() {
 
     const slides = Array.from(slider.querySelectorAll("[data-slide]"));
     const dots = Array.from(slider.querySelectorAll("[data-dot]"));
+    const metaToggles = Array.from(slider.querySelectorAll("[data-meta-toggle]"));
     const prevButton = slider.querySelector("[data-prev]");
     const nextButton = slider.querySelector("[data-next]");
     const autoplay = slider.dataset.autoplay === "true";
+    const showMeta = slider.dataset.showMeta !== "false";
     const interval = Number(slider.dataset.interval || 5000);
 
     if (slides.length === 0) return;
 
     let activeIndex = 0;
     let autoplayId = null;
+
+    const closeAllMetaPanels = () => {
+      metaToggles.forEach((toggle) => {
+        toggle.setAttribute("aria-expanded", "false");
+      });
+      slider.querySelectorAll("[data-meta-panel]").forEach((panel) => {
+        panel.hidden = true;
+      });
+    };
+
+    const stopAutoplay = () => {
+      window.clearInterval(autoplayId);
+      autoplayId = null;
+    };
 
     const setActiveSlide = (index) => {
       activeIndex = (index + slides.length) % slides.length;
@@ -24,6 +40,12 @@ function initImageSliders() {
         const isActive = slideIndex === activeIndex;
         slide.classList.toggle("is-active", isActive);
         slide.setAttribute("aria-hidden", String(!isActive));
+        if (!isActive) {
+          const toggle = slide.querySelector("[data-meta-toggle]");
+          const panel = slide.querySelector("[data-meta-panel]");
+          if (toggle) toggle.setAttribute("aria-expanded", "false");
+          if (panel) panel.hidden = true;
+        }
       });
 
       dots.forEach((dot, dotIndex) => {
@@ -35,7 +57,7 @@ function initImageSliders() {
 
     const resetAutoplay = () => {
       if (!autoplay || slides.length < 2) return;
-      window.clearInterval(autoplayId);
+      stopAutoplay();
       autoplayId = window.setInterval(() => {
         setActiveSlide(activeIndex + 1);
       }, interval);
@@ -61,6 +83,28 @@ function initImageSliders() {
       });
     });
 
+    if (showMeta) {
+      metaToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const slide = toggle.closest("[data-slide]");
+          const panel = slide?.querySelector("[data-meta-panel]");
+          if (!panel) return;
+
+          const nextState = toggle.getAttribute("aria-expanded") !== "true";
+
+          closeAllMetaPanels();
+
+          if (nextState) {
+            toggle.setAttribute("aria-expanded", "true");
+            panel.hidden = false;
+            stopAutoplay();
+          } else {
+            resetAutoplay();
+          }
+        });
+      });
+    }
+
     slider.addEventListener("keydown", (event) => {
       if (event.key === "ArrowLeft") step(-1);
       if (event.key === "ArrowRight") step(1);
@@ -76,6 +120,13 @@ function initImageSliders() {
       if (event.target.closest("[data-protected-slide]")) {
         event.preventDefault();
       }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (event.target.closest("[data-image-slider]") === slider) return;
+      const hadOpenPanel = slider.querySelector('[data-meta-toggle][aria-expanded="true"]');
+      closeAllMetaPanels();
+      if (hadOpenPanel) resetAutoplay();
     });
 
     setActiveSlide(0);

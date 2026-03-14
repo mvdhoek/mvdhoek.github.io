@@ -6,6 +6,7 @@
   data-slider-id="slider-{{ forloop.index0 | default: 0 }}"
   data-autoplay="{{ slider.autoplay | default: false }}"
   data-interval="{{ slider.interval | default: 5000 }}"
+  data-show-meta="{{ slider.show_meta | default: true }}"
   tabindex="0"
   aria-roledescription="carousel"
   aria-label="{{ slider.label | default: 'Image slider' }}"
@@ -31,6 +32,29 @@
         {% if forloop.first %}fetchpriority="high"{% endif %}
       >
       <div class="iis-slide__guard" aria-hidden="true"></div>
+      {% assign show_meta = slider.show_meta | default: true %}
+      {% if show_meta and item.metadata %}
+      <div class="iis-slide__meta">
+        <button
+          type="button"
+          class="iis-slide__meta-toggle"
+          data-meta-toggle
+          aria-expanded="false"
+          aria-label="Show image information"
+        >
+          <img class="iis-slide__meta-icon" src="{{ '/assets/icons/camera-aperture-icon.svg' | relative_url }}" alt="">
+        </button>
+        <div class="iis-slide__meta-panel" data-meta-panel hidden>
+          <dl class="iis-slide__meta-list">
+            {% if item.metadata.make %}<div><dt>Make</dt><dd>{{ item.metadata.make }}</dd></div>{% endif %}
+            {% if item.metadata.model %}<div><dt>Model</dt><dd>{{ item.metadata.model }}</dd></div>{% endif %}
+            {% if item.metadata.focal_length %}<div><dt>Focal length</dt><dd>{{ item.metadata.focal_length }}</dd></div>{% endif %}
+            {% if item.metadata.f_number %}<div><dt>F-number</dt><dd>{{ item.metadata.f_number }}</dd></div>{% endif %}
+            {% if item.metadata.exposure_time %}<div><dt>Exposure</dt><dd>{{ item.metadata.exposure_time }}</dd></div>{% endif %}
+          </dl>
+        </div>
+      </div>
+      {% endif %}
       {% if item.annotation_place or item.annotation_coords %}
       <div class="iis-slide__annotation">
         {% if item.annotation_place %}<p class="iis-slide__annotation-place">{{ item.annotation_place }}</p>{% endif %}
