@@ -20,9 +20,9 @@ image_sliders:
           focal_length: 22,3mm
           f_number: f/5,6
           exposure_time: 1/220s
-        #alt: Local slider image DSCF1216
-        #title: Strategy in Motion
-        #caption: The slider now loads directly from files in assets/#images, which is the safer setup for GitHub Pages.
+        alt: Local slider image DSCF1216
+        title: Strategy in Motion
+        caption: The slider now loads directly from files in assets/images, which is the safer setup for GitHub Pages.
       - image: /assets/images/DSCF1224.jpg
         annotation_place: Smitswinkel Bay
         annotation_coords: 34° 16' 1" S 18° 27' 40" E
