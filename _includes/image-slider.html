@@ -3,6 +3,7 @@
 <section
   class="iis-slider{% if include.fullscreen %} iis-slider--fullscreen{% endif %}"
   data-image-slider
+  data-slider-id="slider-{{ forloop.index0 | default: 0 }}"
   data-autoplay="{{ slider.autoplay | default: false }}"
   data-interval="{{ slider.interval | default: 5000 }}"
   tabindex="0"

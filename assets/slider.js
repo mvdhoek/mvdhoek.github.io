@@ -1,7 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initImageSliders() {
   const sliders = document.querySelectorAll("[data-image-slider]");
 
   sliders.forEach((slider) => {
+    if (slider.dataset.ready === "true") return;
+    slider.dataset.ready = "true";
+
     const slides = Array.from(slider.querySelectorAll("[data-slide]"));
     const dots = Array.from(slider.querySelectorAll("[data-dot]"));
     const prevButton = slider.querySelector("[data-prev]");
@@ -43,8 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
       resetAutoplay();
     };
 
-    prevButton?.addEventListener("click", () => step(-1));
-    nextButton?.addEventListener("click", () => step(1));
+    if (prevButton) {
+      prevButton.addEventListener("click", () => step(-1));
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => step(1));
+    }
 
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
@@ -61,4 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     setActiveSlide(0);
     resetAutoplay();
   });
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initImageSliders);
+} else {
+  initImageSliders();
+}
