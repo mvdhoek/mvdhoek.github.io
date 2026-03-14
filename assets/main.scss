@@ -184,10 +184,10 @@ a {
   width: 1.15rem;
   height: 1.15rem;
   padding: 0;
-  border: 1px solid rgba(247, 242, 234, 0.42);
-  border-radius: 999px;
-  background: rgba(10, 10, 10, 0.24);
-  backdrop-filter: blur(10px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
   cursor: pointer;
 }
 
