@@ -8,10 +8,12 @@ function initImageSliders() {
     const slides = Array.from(slider.querySelectorAll("[data-slide]"));
     const dots = Array.from(slider.querySelectorAll("[data-dot]"));
     const metaToggles = Array.from(slider.querySelectorAll("[data-meta-toggle]"));
+    const mapToggles = Array.from(slider.querySelectorAll("[data-map-toggle]"));
     const prevButton = slider.querySelector("[data-prev]");
     const nextButton = slider.querySelector("[data-next]");
     const autoplay = slider.dataset.autoplay === "true";
     const showMeta = slider.dataset.showMeta !== "false";
+    const showLocationMap = slider.dataset.showLocationMap !== "false";
     const interval = Number(slider.dataset.interval || 5000);
 
     if (slides.length === 0) return;
@@ -19,11 +21,17 @@ function initImageSliders() {
     let activeIndex = 0;
     let autoplayId = null;
 
-    const closeAllMetaPanels = () => {
+    const closeAllPanels = () => {
       metaToggles.forEach((toggle) => {
         toggle.setAttribute("aria-expanded", "false");
       });
       slider.querySelectorAll("[data-meta-panel]").forEach((panel) => {
+        panel.hidden = true;
+      });
+      mapToggles.forEach((toggle) => {
+        toggle.setAttribute("aria-expanded", "false");
+      });
+      slider.querySelectorAll("[data-map-panel]").forEach((panel) => {
         panel.hidden = true;
       });
     };
@@ -31,6 +39,48 @@ function initImageSliders() {
     const stopAutoplay = () => {
       window.clearInterval(autoplayId);
       autoplayId = null;
+    };
+
+    const ensureMap = (panel) => {
+      const canvas = panel?.querySelector("[data-map-canvas]");
+      if (!canvas || !window.L) return null;
+      if (canvas._leaflet_map_instance) return canvas._leaflet_map_instance;
+
+      const lat = Number(canvas.dataset.lat);
+      const lng = Number(canvas.dataset.lng);
+      const zoom = Number(canvas.dataset.zoom || 11);
+
+      const map = window.L.map(canvas, {
+        zoomControl: false,
+        attributionControl: true,
+        dragging: false,
+        scrollWheelZoom: false,
+        doubleClickZoom: false,
+        boxZoom: false,
+        keyboard: false,
+        tap: false,
+        touchZoom: false
+      }).setView([lat, lng], zoom);
+
+      window.L.tileLayer("https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a> <a href="https://openmaps.fr/donate">Donation</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 17
+      }).addTo(map);
+
+      canvas._leaflet_map_instance = map;
+      return map;
+    };
+
+    const openMapPanel = (toggle, panel) => {
+      panel.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      const map = ensureMap(panel);
+      if (map) {
+        window.setTimeout(() => {
+          map.invalidateSize();
+        }, 20);
+      }
     };
 
     const setActiveSlide = (index) => {
@@ -41,10 +91,14 @@ function initImageSliders() {
         slide.classList.toggle("is-active", isActive);
         slide.setAttribute("aria-hidden", String(!isActive));
         if (!isActive) {
-          const toggle = slide.querySelector("[data-meta-toggle]");
-          const panel = slide.querySelector("[data-meta-panel]");
-          if (toggle) toggle.setAttribute("aria-expanded", "false");
-          if (panel) panel.hidden = true;
+          const metaToggle = slide.querySelector("[data-meta-toggle]");
+          const metaPanel = slide.querySelector("[data-meta-panel]");
+          const mapToggle = slide.querySelector("[data-map-toggle]");
+          const mapPanel = slide.querySelector("[data-map-panel]");
+          if (metaToggle) metaToggle.setAttribute("aria-expanded", "false");
+          if (metaPanel) metaPanel.hidden = true;
+          if (mapToggle) mapToggle.setAttribute("aria-expanded", "false");
+          if (mapPanel) mapPanel.hidden = true;
         }
       });
 
@@ -92,11 +146,32 @@ function initImageSliders() {
 
           const nextState = toggle.getAttribute("aria-expanded") !== "true";
 
-          closeAllMetaPanels();
+          closeAllPanels();
 
           if (nextState) {
             toggle.setAttribute("aria-expanded", "true");
             panel.hidden = false;
+            stopAutoplay();
+          } else {
+            resetAutoplay();
+          }
+        });
+      });
+    }
+
+    if (showLocationMap) {
+      mapToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const slide = toggle.closest("[data-slide]");
+          const panel = slide?.querySelector("[data-map-panel]");
+          if (!panel) return;
+
+          const nextState = toggle.getAttribute("aria-expanded") !== "true";
+
+          closeAllPanels();
+
+          if (nextState) {
+            openMapPanel(toggle, panel);
             stopAutoplay();
           } else {
             resetAutoplay();
@@ -124,8 +199,8 @@ function initImageSliders() {
 
     document.addEventListener("click", (event) => {
       if (event.target.closest("[data-image-slider]") === slider) return;
-      const hadOpenPanel = slider.querySelector('[data-meta-toggle][aria-expanded="true"]');
-      closeAllMetaPanels();
+      const hadOpenPanel = slider.querySelector('[aria-expanded="true"]');
+      closeAllPanels();
       if (hadOpenPanel) resetAutoplay();
     });
 

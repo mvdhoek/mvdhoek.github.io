@@ -7,6 +7,7 @@
   data-autoplay="{{ slider.autoplay | default: false }}"
   data-interval="{{ slider.interval | default: 5000 }}"
   data-show-meta="{{ slider.show_meta | default: true }}"
+  data-show-location-map="{{ slider.show_location_map | default: true }}"
   tabindex="0"
   aria-roledescription="carousel"
   aria-label="{{ slider.label | default: 'Image slider' }}"
@@ -55,10 +56,35 @@
         </div>
       </div>
       {% endif %}
+      {% assign show_location_map = slider.show_location_map | default: true %}
       {% if item.annotation_place or item.annotation_coords %}
-      <div class="iis-slide__annotation">
-        {% if item.annotation_place %}<p class="iis-slide__annotation-place">{{ item.annotation_place }}</p>{% endif %}
-        {% if item.annotation_coords %}<p class="iis-slide__annotation-coords">{{ item.annotation_coords }}</p>{% endif %}
+      <div class="iis-slide__annotation-wrap">
+        {% if show_location_map and item.annotation_lat and item.annotation_lng %}
+        <button
+          type="button"
+          class="iis-slide__annotation iis-slide__annotation-toggle"
+          data-map-toggle
+          aria-expanded="false"
+          aria-label="Show location map"
+        >
+          {% if item.annotation_place %}<span class="iis-slide__annotation-place">{{ item.annotation_place }}</span>{% endif %}
+          {% if item.annotation_coords %}<span class="iis-slide__annotation-coords">{{ item.annotation_coords }}</span>{% endif %}
+        </button>
+        <div class="iis-slide__map-panel" data-map-panel hidden>
+          <div
+            class="iis-slide__map-canvas"
+            data-map-canvas
+            data-lat="{{ item.annotation_lat }}"
+            data-lng="{{ item.annotation_lng }}"
+            data-zoom="{{ item.annotation_zoom | default: 11 }}"
+          ></div>
+        </div>
+        {% else %}
+        <div class="iis-slide__annotation">
+          {% if item.annotation_place %}<p class="iis-slide__annotation-place">{{ item.annotation_place }}</p>{% endif %}
+          {% if item.annotation_coords %}<p class="iis-slide__annotation-coords">{{ item.annotation_coords }}</p>{% endif %}
+        </div>
+        {% endif %}
       </div>
       {% endif %}
       {% if item.caption or item.title %}

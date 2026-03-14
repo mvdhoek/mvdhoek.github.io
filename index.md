@@ -7,10 +7,14 @@ image_sliders:
     autoplay: true
     interval: 7500
     show_meta: true
+    show_location_map: true
     images:
       - image: /assets/images/DSCF1216.jpg
         annotation_place: Misty Cliffs
         annotation_coords: 34° 10' 38" S 18° 21' 1" E
+        annotation_lat: -34.1772
+        annotation_lng: 18.3503
+        annotation_zoom: 12
         annotation_color: rgba(0, 0, 0, 0.95)
         metadata:
           make: FUJIFILM
@@ -24,6 +28,9 @@ image_sliders:
       - image: /assets/images/DSCF1224.jpg
         annotation_place: Smitswinkel Bay
         annotation_coords: 34° 16' 1" S 18° 27' 40" E
+        annotation_lat: -34.2669
+        annotation_lng: 18.4611
+        annotation_zoom: 12
         annotation_color: rgba(244, 238, 226, 0.92)
         metadata:
           make: FUJIFILM
@@ -37,6 +44,9 @@ image_sliders:
       - image: /assets/images/DSCF1225.jpg
         annotation_place: Smitswinkel Bay
         annotation_coords: 34° 16' 1" S 18° 27' 40" E
+        annotation_lat: -34.2669
+        annotation_lng: 18.4611
+        annotation_zoom: 12
         annotation_color: rgba(244, 238, 226, 0.94)
         metadata:
           make: FUJIFILM
@@ -50,6 +60,9 @@ image_sliders:
       - image: /assets/images/DSCF1270.jpg
         annotation_place: Leeukop
         annotation_coords: 33° 56' 5" S 18° 23' 12" E
+        annotation_lat: -33.9347
+        annotation_lng: 18.3867
+        annotation_zoom: 12
         annotation_color: rgba(0, 0, 0, 0.9)
         metadata:
           make: FUJIFILM
