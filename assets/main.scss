@@ -120,7 +120,6 @@ a {
   gap: 0.65rem;
 }
 
-.iis-slider__button,
 .iis-slider__dot {
   border: 1px solid var(--line);
   background: var(--panel);
@@ -141,14 +140,6 @@ a {
   display: grid;
   place-items: center;
   text-align: center;
-}
-
-.iis-slider__button {
-  min-width: 5rem;
-  padding: 0.8rem 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.75rem;
 }
 
 .iis-slider__dot {

@@ -1,7 +1,7 @@
 ---
 layout: home
-title: Home
-description: "Fullscreen image slider."
+title: vandenhoek.aero
+description: ""
 image_sliders:
   - label: Home slider
     autoplay: true

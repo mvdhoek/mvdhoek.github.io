@@ -35,7 +35,6 @@
 
   {% if slider.images.size > 1 %}
   <div class="iis-slider__ui">
-    <button type="button" class="iis-slider__button" data-prev aria-label="Previous slide">Prev</button>
     <div class="iis-slider__dots" aria-label="Slide navigation">
       {% for item in slider.images %}
       <button
@@ -48,7 +47,6 @@
       ></button>
       {% endfor %}
     </div>
-    <button type="button" class="iis-slider__button" data-next aria-label="Next slide">Next</button>
   </div>
   {% endif %}
 </section>
