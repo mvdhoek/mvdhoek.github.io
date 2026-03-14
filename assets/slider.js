@@ -1,4 +1,33 @@
 function initImageSliders() {
+  const parseDmsPart = (part) => {
+    if (!part) return null;
+
+    const match = part.trim().match(/(\d+(?:\.\d+)?)°\s*(\d+(?:\.\d+)?)'\s*(\d+(?:\.\d+)?)"\s*([NSEW])/i);
+    if (!match) return null;
+
+    const degrees = Number(match[1]);
+    const minutes = Number(match[2]);
+    const seconds = Number(match[3]);
+    const hemisphere = match[4].toUpperCase();
+
+    let decimal = degrees + minutes / 60 + seconds / 3600;
+    if (hemisphere === "S" || hemisphere === "W") decimal *= -1;
+    return decimal;
+  };
+
+  const parseCoordinatePair = (value) => {
+    if (!value) return null;
+
+    const parts = value.match(/\d+(?:\.\d+)?°\s*\d+(?:\.\d+)?'\s*\d+(?:\.\d+)?"\s*[NSEW]/gi);
+    if (!parts || parts.length < 2) return null;
+
+    const lat = parseDmsPart(parts[0]);
+    const lng = parseDmsPart(parts[1]);
+
+    if (lat === null || lng === null) return null;
+    return { lat, lng };
+  };
+
   const sliders = document.querySelectorAll("[data-image-slider]");
 
   sliders.forEach((slider) => {
@@ -41,13 +70,18 @@ function initImageSliders() {
       autoplayId = null;
     };
 
+    const hasOpenPanels = () =>
+      Boolean(slider.querySelector('[data-meta-toggle][aria-expanded="true"], [data-map-toggle][aria-expanded="true"]'));
+
     const ensureMap = (panel) => {
       const canvas = panel?.querySelector("[data-map-canvas]");
       if (!canvas || !window.L) return null;
       if (canvas._leaflet_map_instance) return canvas._leaflet_map_instance;
 
-      const lat = Number(canvas.dataset.lat);
-      const lng = Number(canvas.dataset.lng);
+      const coords = parseCoordinatePair(canvas.dataset.coords);
+      if (!coords) return null;
+
+      const { lat, lng } = coords;
       const zoom = Number(canvas.dataset.zoom || 11);
 
       const map = window.L.map(canvas, {
@@ -111,6 +145,7 @@ function initImageSliders() {
 
     const resetAutoplay = () => {
       if (!autoplay || slides.length < 2) return;
+      if (hasOpenPanels()) return;
       stopAutoplay();
       autoplayId = window.setInterval(() => {
         setActiveSlide(activeIndex + 1);
@@ -146,13 +181,13 @@ function initImageSliders() {
 
           const nextState = toggle.getAttribute("aria-expanded") !== "true";
 
-          closeAllPanels();
-
           if (nextState) {
             toggle.setAttribute("aria-expanded", "true");
             panel.hidden = false;
             stopAutoplay();
           } else {
+            toggle.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
             resetAutoplay();
           }
         });
@@ -168,12 +203,12 @@ function initImageSliders() {
 
           const nextState = toggle.getAttribute("aria-expanded") !== "true";
 
-          closeAllPanels();
-
           if (nextState) {
             openMapPanel(toggle, panel);
             stopAutoplay();
           } else {
+            toggle.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
             resetAutoplay();
           }
         });
