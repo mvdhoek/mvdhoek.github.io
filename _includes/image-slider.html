@@ -1,0 +1,50 @@
+{% assign slider = include.slider %}
+{% if slider and slider.images and slider.images.size > 0 %}
+<section
+  class="iis-slider{% if include.fullscreen %} iis-slider--fullscreen{% endif %}"
+  data-image-slider
+  data-autoplay="{{ slider.autoplay | default: false }}"
+  data-interval="{{ slider.interval | default: 5000 }}"
+  tabindex="0"
+  aria-roledescription="carousel"
+  aria-label="{{ slider.label | default: 'Image slider' }}"
+>
+  <div class="iis-slider__track">
+    {% for item in slider.images %}
+    <figure class="iis-slide{% if forloop.first %} is-active{% endif %}" data-slide aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
+      <img
+        class="iis-slide__image"
+        src="{{ item.image }}"
+        alt="{{ item.alt | default: '' }}"
+        {% if forloop.first %}fetchpriority="high"{% endif %}
+      >
+      {% if item.caption or item.title %}
+      <figcaption class="iis-slide__caption">
+        {% if item.title %}<h1 class="iis-slide__title">{{ item.title }}</h1>{% endif %}
+        {% if item.caption %}<p class="iis-slide__text">{{ item.caption }}</p>{% endif %}
+      </figcaption>
+      {% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+
+  {% if slider.images.size > 1 %}
+  <div class="iis-slider__ui">
+    <button type="button" class="iis-slider__button" data-prev aria-label="Previous slide">Prev</button>
+    <div class="iis-slider__dots" aria-label="Slide navigation">
+      {% for item in slider.images %}
+      <button
+        type="button"
+        class="iis-slider__dot{% if forloop.first %} is-active{% endif %}"
+        data-dot
+        data-index="{{ forloop.index0 }}"
+        aria-label="Go to slide {{ forloop.index }}"
+        aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+      ></button>
+      {% endfor %}
+    </div>
+    <button type="button" class="iis-slider__button" data-next aria-label="Next slide">Next</button>
+  </div>
+  {% endif %}
+</section>
+{% endif %}

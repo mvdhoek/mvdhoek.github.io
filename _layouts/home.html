@@ -2,7 +2,11 @@
 layout: default
 ---
 
-{% include hero-slider.html %}
+{% if page.image_sliders %}
+  {% for slider in page.image_sliders %}
+    {% include image-slider.html slider=slider fullscreen=true %}
+  {% endfor %}
+{% endif %}
 
 {% assign stripped = content | strip %}
 {% unless stripped == "" %}
