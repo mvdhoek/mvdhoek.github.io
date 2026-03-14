@@ -83,11 +83,11 @@ a {
   inset:
     calc((env(safe-area-inset-top, 0px) + 12px) * -1)
     0
-    calc(env(safe-area-inset-bottom, 0px) * -1)
+    0
     0;
   display: block;
   width: 100%;
-  height: calc(100% + env(safe-area-inset-top, 0px) + env(safe-area-inset-bottom, 0px) + 12px);
+  height: calc(100% + env(safe-area-inset-top, 0px) + 12px);
   object-fit: cover;
   object-position: center;
   -webkit-user-drag: none;
@@ -101,7 +101,7 @@ a {
   inset:
     calc((env(safe-area-inset-top, 0px) + 12px) * -1)
     0
-    calc(env(safe-area-inset-bottom, 0px) * -1)
+    0
     0;
   z-index: 1;
   background: transparent;
@@ -116,10 +116,6 @@ a {
   flex-direction: column;
   gap: 1.05rem;
   width: min(40rem, calc(100% - 2.5rem));
-  padding: 1.1rem 1.25rem;
-  border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.45) 100%);
-  backdrop-filter: blur(8px);
 }
 
 .iis-slide__title {
