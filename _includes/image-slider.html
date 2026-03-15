@@ -24,7 +24,7 @@
       data-protected-slide
       aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
       style="{% if item.annotation_color %}--annotation-color: {{ item.annotation_color }}; {% endif %}{% if item.title_color %}--title-color: {{ item.title_color }};{% endif %}"
-    >
+      >
       <img
         class="iis-slide__image"
         src="{{ image_src }}"
@@ -32,6 +32,10 @@
         draggable="false"
         {% if forloop.first %}fetchpriority="high"{% endif %}
       >
+      {% assign show_slide_title = item.show_page_title | default: false %}
+      {% if show_slide_title and page.title %}
+      <div class="iis-slider__page-title" aria-hidden="true">{{ page.title }}</div>
+      {% endif %}
       <div class="iis-slide__guard" aria-hidden="true"></div>
       {% assign show_meta = slider.show_meta | default: true %}
       {% if show_meta and item.metadata %}

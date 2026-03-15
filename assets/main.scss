@@ -157,6 +157,21 @@ a {
   gap: 0.65rem;
 }
 
+.iis-slider__page-title {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2rem);
+  left: clamp(1rem, 3vw, 2.5rem);
+  z-index: 3;
+  color: var(--fg);
+  font-family: "Arapey", serif;
+  font-size: clamp(1.5rem, 1.8vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
 .iis-slider__dot {
   border: 1px solid var(--line);
   background: var(--panel);
@@ -404,6 +419,11 @@ a {
     bottom: auto;
     transform: translateY(-50%);
     width: min(32rem, calc(100% - 2rem));
+  }
+
+  .iis-slider__page-title {
+    top: 1rem;
+    left: 1rem;
   }
 
   .iis-slide__title {

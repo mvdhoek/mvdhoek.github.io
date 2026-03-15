@@ -10,6 +10,7 @@ image_sliders:
     show_location_map: true
     images:
       - image: /assets/images/DSCF1216.jpg
+        show_page_title: true
         annotation_place: Misty Cliffs
         annotation_coords: 34° 10' 38" S 18° 21' 1" E
         annotation_lat: -34.1772
@@ -28,6 +29,7 @@ image_sliders:
         #title_color: rgba(255, 255, 255, 0.92)
         #caption: The slider now loads directly from files in assets/images, which is the safer setup for GitHub Pages.
       - image: /assets/images/DSCF1224.jpg
+        show_page_title: false
         annotation_place: Smitswinkel Bay
         annotation_coords: 34° 16' 1" S 18° 27' 40" E
         annotation_lat: -34.2669
@@ -43,6 +45,7 @@ image_sliders:
           exposure_time: 1/320s
         alt: Lizzard in Table Mountain National Park in South Africa
       - image: /assets/images/DSCF1225.jpg
+        show_page_title: false
         annotation_place: Smitswinkel Bay
         annotation_coords: 34° 16' 1" S 18° 27' 40" E
         annotation_lat: -34.2669
@@ -58,6 +61,7 @@ image_sliders:
           exposure_time: 1/200s
         alt: View of False Bay from Table Mountain National Park in South Africa
       - image: /assets/images/DSCF1270.jpg
+        show_page_title: false
         annotation_place: Leeukop
         annotation_coords: 33° 56' 5" S 18° 23' 12" E
         annotation_lat: -33.9347
@@ -73,6 +77,7 @@ image_sliders:
           exposure_time: 1/300s
         alt: Peak of Lion's Head as seen from Table Mountain, South Africa.
       - image: /assets/images/DSCF0797.jpg
+        show_page_title: false
         annotation_place: Franschhoek
         annotation_coords: 33° 54' 20" S 19° 9' 0" E
         annotation_lat: -33.9056811
@@ -88,6 +93,7 @@ image_sliders:
           exposure_time: 1/300s
         alt: View of Franschhoek from Franschhoekpas.
       - image: /assets/images/DSCF0804.jpg
+        show_page_title: true
         annotation_place: Cellars-Hohenort Gardens
         annotation_coords: 34° 0' 5" S 18° 25' 56" E
         annotation_lat: -34.0012675
