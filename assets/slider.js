@@ -89,6 +89,14 @@ function initImageSliders() {
     };
 
     const setActiveSlide = (index) => {
+      const currentSlide = slides[activeIndex];
+      const shouldKeepMetaOpen = Boolean(
+        currentSlide?.querySelector('[data-meta-toggle][aria-expanded="true"]')
+      );
+      const shouldKeepMapOpen = Boolean(
+        currentSlide?.querySelector('[data-map-toggle][aria-expanded="true"]')
+      );
+
       activeIndex = (index + slides.length) % slides.length;
 
       slides.forEach((slide, slideIndex) => {
@@ -106,6 +114,24 @@ function initImageSliders() {
           if (mapPanel) mapPanel.hidden = true;
         }
       });
+
+      const nextSlide = slides[activeIndex];
+      if (shouldKeepMetaOpen) {
+        const metaToggle = nextSlide?.querySelector("[data-meta-toggle]");
+        const metaPanel = nextSlide?.querySelector("[data-meta-panel]");
+        if (metaToggle && metaPanel) {
+          metaToggle.setAttribute("aria-expanded", "true");
+          metaPanel.hidden = false;
+        }
+      }
+
+      if (shouldKeepMapOpen) {
+        const mapToggle = nextSlide?.querySelector("[data-map-toggle]");
+        const mapPanel = nextSlide?.querySelector("[data-map-panel]");
+        if (mapToggle && mapPanel) {
+          openMapPanel(mapToggle, mapPanel);
+        }
+      }
 
       dots.forEach((dot, dotIndex) => {
         const isActive = dotIndex === activeIndex;

@@ -185,10 +185,14 @@ a {
   width: 1.15rem;
   height: 1.15rem;
   padding: 0;
+  color: inherit;
   border: 0;
   border-radius: 0;
   background: transparent;
   backdrop-filter: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
 }
 
@@ -231,6 +235,7 @@ a {
   grid-template-columns: 5.6rem 1fr;
   gap: 0.35rem 0.7rem;
   padding: 0;
+  align-items: center;
 }
 
 .iis-slide__meta-list dt,
@@ -239,10 +244,13 @@ a {
 }
 
 .iis-slide__meta-list dt {
+  display: flex;
+  align-items: center;
   color: rgba(247, 242, 234, 0.62);
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.14em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -259,6 +267,8 @@ a {
 }
 
 .iis-slide__meta-list dd {
+  display: flex;
+  align-items: center;
   font-size: 0.72rem;
   line-height: 1.45;
 }
