@@ -72,4 +72,34 @@ image_sliders:
           f_number: f/4,5
           exposure_time: 1/300s
         alt: Peak of Lion's Head as seen from Table Mountain, South Africa.
+      - image: /assets/images/DSCF0797.jpg
+        annotation_place: Franschhoek
+        annotation_coords: 33° 54' 20" S 19° 9' 0" E
+        annotation_lat: -33.9056811
+        annotation_lng: 19.1499795
+        annotation_zoom: 12
+        annotation_color: rgba(255, 255, 255, 0.9)
+        metadata:
+          photographer: mh@vandenhoek.aero
+          make: FUJIFILM
+          model: X-S10
+          focal_length: 19,2mm
+          f_number: f/9
+          exposure_time: 1/300s
+        alt: View of Franschhoek from Franschhoekpas.
+      - image: /assets/images/DSCF0804.jpg
+        annotation_place: Cellars-Hohenort Gardens
+        annotation_coords: 34° 0' 5" S 18° 25' 56" E
+        annotation_lat: -34.0012675
+        annotation_lng: 18.4321069
+        annotation_zoom: 12
+        annotation_color: rgba(255, 255, 255, 0.9)
+        metadata:
+          photographer: mh@vandenhoek.aero
+          make: FUJIFILM
+          model: X-S10
+          focal_length: 39,3mm
+          f_number: f/8
+          exposure_time: 1/125s
+        alt: Lush gardens of the Cellars-Hohenort, Constantia.
 ---
