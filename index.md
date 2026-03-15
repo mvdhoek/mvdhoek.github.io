@@ -1,6 +1,6 @@
 ---
 layout: home
-title: showcase
+title: Field notes
 description: ""
 image_sliders:
   - label: Home slider
